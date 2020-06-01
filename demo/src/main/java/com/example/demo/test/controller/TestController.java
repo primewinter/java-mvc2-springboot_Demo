@@ -1,7 +1,8 @@
-package com.example.demo.test;
+package com.example.demo.test.controller;
 
-import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +13,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.test.service.TestService;
 import com.example.demo.test.vo.TestVO;
 
+
+
 @Controller
 public class TestController {
 	
 	@Autowired 
 	TestService testService;
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
 	
 	@RequestMapping(value = "/home") 
@@ -34,6 +39,7 @@ public class TestController {
 	@RequestMapping("/test")
 	public ModelAndView test() throws Exception{
 		ModelAndView mav = new ModelAndView("test");
+		/*
 		mav.addObject("name", "goddaehee");
 //		List<String> testList = new ArrayList<String>(); 
 //		testList.add("a"); 
@@ -43,6 +49,15 @@ public class TestController {
 		mav.addObject("list", testList); 
 		
 		return mav; 
+		*/
+		
+		logger.trace("Trace Level 테스트");
+		logger.debug("DEBUG Level 테스트");
+		logger.info("INFO Level 테스트");
+		logger.warn("Warn Level 테스트");
+		logger.error("ERROR Level 테스트");
+		
+		return mav;
 	}
 	
 	@RequestMapping("/thymeleafTest") 
