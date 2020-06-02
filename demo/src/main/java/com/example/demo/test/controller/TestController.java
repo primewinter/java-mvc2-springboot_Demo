@@ -1,6 +1,8 @@
 package com.example.demo.test.controller;
 
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +41,7 @@ public class TestController {
 	@RequestMapping("/test")
 	public ModelAndView test() throws Exception{
 		ModelAndView mav = new ModelAndView("test");
-		/*
-		mav.addObject("name", "goddaehee");
+//		mav.addObject("name", "heyyyyyyyyyyyyyy");
 //		List<String> testList = new ArrayList<String>(); 
 //		testList.add("a"); 
 //		testList.add("b"); 
@@ -48,8 +49,7 @@ public class TestController {
 		List<TestVO> testList = testService.selectTest(); 
 		mav.addObject("list", testList); 
 		
-		return mav; 
-		*/
+		
 		
 		logger.trace("Trace Level 테스트");
 		logger.debug("DEBUG Level 테스트");
